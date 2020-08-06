@@ -51,6 +51,3 @@ names(measurements)<-gsub("BodyBody", "Body", names(measurements))
 TidyDataSets <- aggregate(. ~ activity + subject, measurements, mean)
 write.table(TidyDataSets, "TidyDataSets.txt", row.name=FALSE)
 
-##Produce a codebook for the final dataset
-library(memisc)
-Write(codebook(TidyDataSets), file="CodeBook.md")
